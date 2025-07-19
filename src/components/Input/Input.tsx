@@ -17,28 +17,41 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       clearable = false,
       className = "",
       disabled = false,
+      value: controlledValue,
+      onChange,
       ...props
     },
     ref
   ) => {
     const [showPassword, setShowPassword] = useState(false);
-    const [value, setValue] = useState(props.value || props.defaultValue || "");
+    const [internalValue, setInternalValue] = useState(
+      props.defaultValue || ""
+    );
+
+    // Determine if the component is controlled
+    const isControlled = controlledValue !== undefined;
+    const value = isControlled ? controlledValue : internalValue;
 
     const isPasswordType = type === "password";
     const inputType = isPasswordType && showPassword ? "text" : type;
     const hasValue = value && String(value).length > 0;
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value);
-      props.onChange?.(e);
+      if (!isControlled) {
+        setInternalValue(e.target.value);
+      }
+      onChange?.(e);
     };
 
     const handleClear = () => {
-      setValue("");
+      const newValue = "";
+      if (!isControlled) {
+        setInternalValue(newValue);
+      }
       const syntheticEvent = {
-        target: { value: "", name: props.name || "" },
+        target: { value: newValue, name: props.name || "" },
       } as React.ChangeEvent<HTMLInputElement>;
-      props.onChange?.(syntheticEvent);
+      onChange?.(syntheticEvent);
     };
 
     const togglePasswordVisibility = () => {

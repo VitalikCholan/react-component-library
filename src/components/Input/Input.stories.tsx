@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Input } from "./Input";
+import { useForm } from "react-hook-form";
 
 const meta: Meta<typeof Input> = {
   title: "Components/Input",
@@ -122,4 +123,31 @@ export const DisabledPassword: Story = {
     disabled: true,
     defaultValue: "password123",
   },
+};
+
+// React Hook Form Integration
+type FormData = {
+  username: string;
+};
+
+export const WithReactHookForm: React.FC = () => {
+  const { register, handleSubmit } = useForm<FormData>();
+
+  const onSubmit = (data: FormData) => {
+    alert(JSON.stringify(data));
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <Input
+        {...register("username")}
+        type="text"
+        clearable={true}
+        placeholder="Enter your username"
+      />
+      <button type="submit" className="bg-blue-500 text-white rounded p-2">
+        Submit
+      </button>
+    </form>
+  );
 };
