@@ -65,7 +65,9 @@ import { SidebarMenu } from "@/components/SidebarMenu";
 
 ## 📸 Screenshots
 
-### Input Component Examples
+### Component States
+
+#### Input Component Examples
 
 **Password Input - Hidden State**
 ![Password Input Hidden](public/screenshots/input-password-hidden.png)
@@ -75,17 +77,17 @@ _Password field with masked input and eye icon for visibility toggle_
 ![Password Input Visible](public/screenshots/input-password-visible.png)
 _Password field with revealed text and eye-slash icon to hide_
 
-### Toast Component Examples
+#### Toast Component Examples
 
 **Success Toast**
-![Success Toast](public/screenshots/toast-success.png.png)
+![Success Toast](public/screenshots/toast-success.png)
 _Green success notification with auto-dismiss timer_
 
 **Error Toast**
 ![Error Toast](public/screenshots/toast-error.png)
 _Red error notification with close button_
 
-### SidebarMenu Component Examples
+#### SidebarMenu Component Examples
 
 **Closed State**
 ![Sidebar Closed](public/screenshots/sidebar-closed.png)
@@ -94,6 +96,22 @@ _Main application with sidebar hidden_
 **Open State with Nested Menu**
 ![Sidebar Open](public/screenshots/sidebar-open.png)
 _Sidebar sliding in from right with expanded submenu_
+
+### Interface Screenshots
+
+#### Storybook Interface
+
+**Input Component in Storybook**
+![Input Storybook Interface](public/screenshots/input-storybook-interface.png)
+_Input component with controls panel showing all available props_
+
+**Toast Component in Storybook**
+![Toast Storybook Interface](public/screenshots/toast-storybook-interface.png)
+_Toast component with different type variants and duration controls_
+
+**SidebarMenu Component in Storybook**
+![SidebarMenu Storybook Interface](public/screenshots/sidebar-storybook-interface.png)
+_SidebarMenu component with nested menu examples and open/closed states_
 
 ## 🛠️ Setup
 
