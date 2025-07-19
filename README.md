@@ -78,11 +78,11 @@ _Password field with revealed text and eye-slash icon to hide_
 ### Toast Component Examples
 
 **Success Toast**
-![Success Toast](screenshots/toast-success.png)
+![Success Toast](public/screenshots/toast-success.png.png)
 _Green success notification with auto-dismiss timer_
 
 **Error Toast**
-![Error Toast](screenshots/toast-error.png)
+![Error Toast](public/screenshots/toast-error.png)
 _Red error notification with close button_
 
 ### SidebarMenu Component Examples
