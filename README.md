@@ -88,11 +88,11 @@ _Red error notification with close button_
 ### SidebarMenu Component Examples
 
 **Closed State**
-![Sidebar Closed](screenshots/sidebar-closed.png)
+![Sidebar Closed](public/screenshots/sidebar-closed.png)
 _Main application with sidebar hidden_
 
 **Open State with Nested Menu**
-![Sidebar Open](screenshots/sidebar-open.png)
+![Sidebar Open](public/screenshots/sidebar-open.png)
 _Sidebar sliding in from right with expanded submenu_
 
 ## 🛠️ Setup
