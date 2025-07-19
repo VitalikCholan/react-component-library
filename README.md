@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# React Component Library
 
-## Getting Started
+A modern React component library built with Next.js, TypeScript, and Storybook.
 
-First, run the development server:
+## 🚀 Quick Start
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open Storybook
+npm run storybook
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📦 Components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Input Component
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Versatile input with password toggle, clearable option, and validation states.
 
-## Learn More
+```tsx
+import { Input } from "@/components/Input";
 
-To learn more about Next.js, take a look at the following resources:
+<Input
+  type="text"
+  placeholder="Enter your name"
+  clearable
+  onChange={(value) => console.log(value)}
+/>;
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Toast Component
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Notification system with auto-dismiss and smooth animations.
 
-## Deploy on Vercel
+```tsx
+import { Toast } from "@/components/Toast";
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<Toast
+  type="success"
+  title="Success!"
+  message="Operation completed successfully."
+  isVisible={showToast}
+  onDismiss={() => setShowToast(false)}
+/>;
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### SidebarMenu Component
+
+Nested sidebar menu with accordion-style submenus and sliding animations.
+
+```tsx
+import { SidebarMenu } from "@/components/SidebarMenu";
+
+<SidebarMenu
+  isOpen={isOpen}
+  items={menuItems}
+  onClose={() => setIsOpen(false)}
+  onItemClick={(item) => console.log("Clicked:", item)}
+/>;
+```
+
+## 📸 Screenshots
+
+### Input Component Examples
+
+**Password Input - Hidden State**
+![Password Input Hidden](public/screenshots/input-password-hidden.png)
+_Password field with masked input and eye icon for visibility toggle_
+
+**Password Input - Visible State**  
+![Password Input Visible](public/screenshots/input-password-visible.png)
+_Password field with revealed text and eye-slash icon to hide_
+
+### Toast Component Examples
+
+**Success Toast**
+![Success Toast](screenshots/toast-success.png)
+_Green success notification with auto-dismiss timer_
+
+**Error Toast**
+![Error Toast](screenshots/toast-error.png)
+_Red error notification with close button_
+
+### SidebarMenu Component Examples
+
+**Closed State**
+![Sidebar Closed](screenshots/sidebar-closed.png)
+_Main application with sidebar hidden_
+
+**Open State with Nested Menu**
+![Sidebar Open](screenshots/sidebar-open.png)
+_Sidebar sliding in from right with expanded submenu_
+
+## 🛠️ Setup
+
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository
+2. Run `npm install`
+3. Run `npm run dev` for Next.js app
+4. Run `npm run storybook` for component documentation
+
+### Available Scripts
+
+- `npm run dev` - Start Next.js development server
+- `npm run storybook` - Start Storybook
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+
+## 📚 Usage
+
+Import components:
+
+```tsx
+import { Input, Toast, SidebarMenu } from "@/components";
+```
+
+Each component supports TypeScript with full IntelliSense. See Storybook for interactive examples and all available props.
+
+## 🎨 Styling
+
+Components use CSS Modules for scoped styling. Customize via:
+
+- `className` prop
+- CSS custom properties
+- CSS Module overrides
+
+## 🧪 Testing
+
+Storybook provides interactive testing environment:
+
+- Component variants
+- Responsive behavior
+- Accessibility features
+- Props controls
+
+## 📄 License
+
+MIT License
